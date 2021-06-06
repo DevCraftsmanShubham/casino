@@ -1,6 +1,6 @@
 const SLOT_UPDATE = 'slotUpdate';
 const SLOT_RESET = 'slotReset';
-
+const ADD_DATA_TO_GAME_RESULT = "addDataToGameResult";
 export interface IGameAction {
   slotNumber: number;
   value: number;
@@ -21,4 +21,17 @@ const ResetGameState = () => {
   };
 };
 
-export { GameAction, ResetGameState, SLOT_UPDATE, SLOT_RESET };
+export interface IAddResult {
+  id: number,
+  slots: Array<number>,
+  time: any,
+}
+
+const addGameResultState = (payload: IAddResult) => {
+  return {
+    type: ADD_DATA_TO_GAME_RESULT,
+    payload
+  }
+}
+
+export { GameAction, ResetGameState, SLOT_UPDATE, SLOT_RESET, ADD_DATA_TO_GAME_RESULT, addGameResultState  };

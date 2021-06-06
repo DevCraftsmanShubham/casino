@@ -17,13 +17,17 @@ const columns = [
 
 const ResultTable = () => {
   return (
+    <div style={{ height: '100%'}}>
     <MaterialTable
+
+    style={{ height:"5%"}}
       columns={columns}
       data={[
-        { id: 'Mehmet', surname: 'Baran', birthYear: 1987, birthCity: 63 },
+        
       ]}
       title="Demo Title"
     />
+    </div>
   );
 };
 
