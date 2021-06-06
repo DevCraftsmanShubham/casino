@@ -61,7 +61,14 @@ const GameModel: FC<IModelProps> = ({
   addBalance
 }) => {
   const classes = useStyles();
-
+  function areEqual(f: number, s: number, t: number){
+    var len = arguments.length;
+    for (var i = 1; i< len; i++){
+       if (arguments[i] === null || arguments[i] !== arguments[i-1])
+          return false;
+    }
+    return true;
+ }
   const playBtn = () => {
     if (count === 0) {
       deductBalance(1);
@@ -72,6 +79,15 @@ const GameModel: FC<IModelProps> = ({
       slotNumber: count,
       value,
     });
+
+    if(count === 3) {
+        const { slot1, slot2, slot3 } = slotsValue;
+        if(slot1 ===7 && slot2 === 7  && slot3 === 7) return addBalance(10);
+        if(slot1 === slot2 || slot2 === slot3 || slot3 === slot1 ) {
+            console.log('true')
+            addBalance(0.5)
+        }
+    }
   };
 
   const reset = () => {

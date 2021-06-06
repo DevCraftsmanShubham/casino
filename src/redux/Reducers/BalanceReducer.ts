@@ -9,7 +9,6 @@ const balanceRecuder = (
   action: { type: string; payload: number }
 ) => {
   const { type, payload } = action;
-  console.log(action);
   switch (type) {
     case DEDUCT_USER_BALANCE:
       return { ...state, balance: state.balance - payload };
