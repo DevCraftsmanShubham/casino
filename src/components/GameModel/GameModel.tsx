@@ -82,7 +82,7 @@ const GameModel: FC<IModelProps> = ({
 
     if(count === 3) {
         const { slot1, slot2, slot3 } = slotsValue;
-        if(slot1 ===7 && slot2 === 7  && slot3 === 7) return addBalance(10);
+        if(slot1 === 7 && slot2 === 7  && slot3 === 7) return addBalance(10);
         if(slot1 === slot2 || slot2 === slot3 || slot3 === slot1 ) {
             console.log('true')
             addBalance(0.5)

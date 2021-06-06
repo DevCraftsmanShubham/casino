@@ -14,6 +14,7 @@ import avatar from '../../assets/user.png';
 import { UserAction } from '../../redux/Actions/UserAction';
 import { IUserState } from '../../redux/Reducers/UserReducer';
 import { showMessage } from '../CustomSnackbar/CustomSnackbar';
+import Footer from './Footer';
 
 interface IMainProps {
   children?: any;
@@ -90,7 +91,7 @@ const Main: FC<IMainProps> = ({
         {_renderUser()}
       </AppBar>
       {children}
-      <div></div>
+      <Footer />
     </div>
   );
 };
